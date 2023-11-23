@@ -22,9 +22,6 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.use(cors());
 
-// Express configuration - port
-const port = process.env.PORT || 5000;
-
 // MongoDB connection
 const mangoURL: string = MONGOURL || "mongodb://localhost:27017/cars";
 
@@ -136,8 +133,8 @@ mongoose
   })
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(port, () => {
-      console.log(`Server is running on port: ${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server is running on port: ${PORT}`);
     });
   })
   .catch((err) => {
