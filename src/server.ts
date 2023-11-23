@@ -25,7 +25,7 @@ app.use(cors());
 // MongoDB connection
 const mangoURL: string = MONGOURL || "mongodb://localhost:27017/cars";
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 // POST endpoint to analyze image and return similar cars

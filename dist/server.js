@@ -41,21 +41,20 @@ const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const car_model_1 = __importDefault(require("./Model/car.model"));
-const bodyParser = require("body-parser");
+const body_parser_1 = __importDefault(require("body-parser"));
 const request_1 = require("./request");
 const axios_1 = __importDefault(require("axios"));
 // import .env variables
 const MONGOURL = process.env.MONGO;
 const KEY = process.env.SUBSCRIPTION_KEY;
 const URL = process.env.ENDPOINT;
+const PORT = process.env.PORT;
 // Create Express server
 const app = (0, express_1.default)();
 // Express configuration - middleware
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+app.use(body_parser_1.default.json({ limit: "50mb" }));
+app.use(body_parser_1.default.urlencoded({ limit: "50mb", extended: true }));
 app.use((0, cors_1.default)());
-// Express configuration - port
-const port = process.env.PORT || 5000;
 // MongoDB connection
 const mangoURL = MONGOURL || "mongodb://localhost:27017/cars";
 app.get("/", (req, res) => {
@@ -161,8 +160,8 @@ mongoose_1.default
 })
     .then(() => {
     console.log("MongoDB connected");
-    app.listen(port, () => {
-        console.log(`Server is running on port: ${port}`);
+    app.listen(PORT, () => {
+        console.log(`Server is running on port: ${PORT}`);
     });
 })
     .catch((err) => {
