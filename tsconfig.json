@@ -108,5 +108,5 @@
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"],
-  "types": ["node"]
+  "types": ["node", "express", "cors", "body-parser"]
 }

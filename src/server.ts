@@ -4,7 +4,7 @@ import cors from "cors";
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import CarModel from "./Model/car.model";
-import bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 import { fetchData, fetchSimilarCars, filterDataFromImage } from "./request";
 import { Tags } from "./interfaces/interfaces";
 import axios from "axios";
