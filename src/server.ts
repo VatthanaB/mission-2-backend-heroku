@@ -26,7 +26,7 @@ app.use(cors());
 const mangoURL: string = MONGOURL || "mongodb://localhost:27017/cars";
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.send("Welcome to Vatthana's Car API using Azure Computer Vision API");
 });
 // POST endpoint to analyze image and return similar cars
 app.post("/analyze", async (req: Request, res: Response) => {
